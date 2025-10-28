@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>POKEDEX</title>
+{% endblock %}
+
+{% block body %}
+        <form method="POST" action="{{url_for("index")}}">
+            <input class="search" type="text" name="Content" id="content"/>
+        </form>
+    <div class="content">
+        <div class="card">
+            <div class="frame">
+                {% if there == "True" %}
+                    <img class="acimage"src={{ img_url }} alt="Pokemon picture">
+                {% elif there == "False" %}
+                <p></p>
+                {% endif %}
+            </div>
+            <div class="card_description">
+                {% if there == "True" %}
+                    <p>Name: {{name}}</p>
+                    <p>ID: {{id}}</p>
+                    <p>Height: {{height}}</p>
+                    <p>Ability: {{abilities.0.ability.name}}</p>
+                    {% if ind == "1" %}
+                        <p>Ability 2: {{abilities.1.ability.name}}</p>
+                    {% endif %}
+
+                {% elif there == "False" %}
+                    <p>No pokemon that goes by that name: bruhaps check spelling?</p>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
