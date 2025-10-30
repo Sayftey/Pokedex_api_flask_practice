@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block body %}
-        <form method="POST" action="{{url_for("index")}}">
-            <input class="search" type="text" name="Content" id="content"/>
-        </form>
-    <div class="content">
+    <form method="POST" action="{{url_for("index")}}">
+        <input class="search" type="text" name="Content" id="content"/>
+    </form>
+    <div class="contentindex">
         <div class="card">
             <div class="frame">
                 {% if there == "True" %}
@@ -19,17 +19,17 @@
             </div>
             <div class="card_description">
                 {% if there == "True" %}
-                    <p>Name: {{name}}</p>
-                    <p>ID: {{id}}</p>
-                    <p>Height: {{height}}</p>
-                    <p>Ability: {{abilities.0.ability.name}}</p>
+                    <p class="name">Name: {{name}}</p>
+                    <p class="id">ID: {{id}}</p>
+                    <p class="height">Height: {{height}}</p>
+                    <p>Type: {{types.0.type.name}}</p>
+                    <p class="abilities">Ability: {{abilities.0.ability.name}}</p>
                     {% if ind == "1" %}
-                        <p>Ability 2: {{abilities.1.ability.name}}</p>
+                        <p class="abilities">Ability 2: {{abilities.1.ability.name}}</p>
                     {% endif %}
 
                 {% elif there == "False" %}
                     <p>No pokemon that goes by that name: bruhaps check spelling?</p>
-
                 {% endif %}
             </div>
         </div>

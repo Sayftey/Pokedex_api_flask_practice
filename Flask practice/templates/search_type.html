@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>POKEDEX TYPE SEARCH</title>
+{% endblock %}
+
+{% block body %}
+    <form method="POST" action="{{url_for("search_type")}}">
+        <input class="search" type="text" name="Content" id="content"/>
+    </form>
+    <div class="content">
+        {% for i in pokemon %}
+        <div class="searchcard">
+            <img src="{{ lis[loop.index0] }}" alt="img">
+            <p>{{ i.pokemon.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

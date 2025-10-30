@@ -1,6 +1,9 @@
 body {
     background-color: rgb(255, 255, 255);
     margin: 0;
+    background-image: url('imgs/nature.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 form {
@@ -11,11 +14,56 @@ form {
 .topbar {
     background-color: rgb(231, 37, 37);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border: solid;
     border-width: 5px;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropbtn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    height: 50px;
+    font-size: 15px;
+    border: none;
+}
+
+.titlebox {
+    display: flex;
+}
 
 .title {
     font-family: 'Courier New', Courier, monospace;
@@ -35,10 +83,17 @@ form {
 }
 
 
-.content {
+.contentindex {
     height: 500px;
     display: flex;
     justify-content: center;
+}
+
+
+.content {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -50,10 +105,13 @@ form {
 
 .frame {
     height: 300px;
+    width: 400px;
     display: flex;
     justify-content: center;
-    background-color: brown;
+    background-color: rgb(225, 248, 122);
     border-radius: 10px 10px 0 0 ;
+    border-width: 5px 5px 0px 5px;
+    border-style: solid;
 }
 
 .acimage {
@@ -65,6 +123,8 @@ form {
     width: 400px;
     height: 200px;
     background-color: rgb(133, 133, 219);
+    border-width: 5px 5px 5px 5px;
+    border-style: solid;
 }
 
 .search {
@@ -74,5 +134,17 @@ form {
     margin-top: 10px;
     height: 60px;
     font-size: 20px;
+}
+
+
+.searchcard {
+    width: 200px;
+    height: 200px;
+    background-color: azure;
+    border-radius: 6px;
+    margin: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
 }
 

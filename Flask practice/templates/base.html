@@ -8,6 +8,15 @@
 </head>
 <body>
     <div class = "topbar">
+        <div class="dropdown">
+            <button class="dropbtn">Search by </button>
+                <div class="dropdown-content">
+                    <a href="/">Name</a>
+                    <a href="search_type">Type</a>
+                    <a href="search_ability">Ability</a>
+                </div>
+        </div>
+        <div class="titlebox">
             <div>
                 <h1 class="title">POKEDEX</h1>
             </div>
@@ -15,6 +24,14 @@
                 <img class="pokemon_icon" src="{{ url_for('static', filename='imgs/poke_icon.png') }}" alt="Example image">
             </div>
         </div>
-    {% block body %}{% endblock %}
+        <div style="width: 90px;">
+
+        </div>
+    </div>
+
+    
+    
+    {% block body %}
+    {% endblock %}
 </body>
 </html>
